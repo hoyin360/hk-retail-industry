@@ -1,0 +1,221 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e3]:
+    - generic [ref=e5]: DATASTORY
+  - main [ref=e6]:
+    - region "Hero" [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: 數據新聞 · 零售市場
+        - heading "訪港客潮推高零售額 商舖空置率仍處高位" [level=1] [ref=e10]:
+          - text: 訪港客潮推高零售額
+          - text: 商舖空置率仍處高位
+        - generic "三個重點指標" [ref=e11]:
+          - generic [ref=e12]:
+            - generic [ref=e13]: 政府最新統計的零售銷售額
+            - generic [ref=e14]: 350億港元
+            - generic [ref=e15]: （2026-02）
+          - generic [ref=e16]:
+            - generic [ref=e17]: 零售額指數按年變動百分率上升
+            - generic [ref=e18]: 19.3%
+            - generic [ref=e19]: （2026-02）
+          - generic [ref=e20]:
+            - generic [ref=e21]: 最新核心商圈空置率
+            - generic [ref=e22]: 11.9%
+            - generic [ref=e23]: （2025 Q3）
+      - generic [ref=e26]: 向下滾動
+    - generic [ref=e27]:
+      - generic [ref=e30]: "1"
+      - generic [ref=e31]:
+        - heading "表面回暖：零售額回升" [level=2] [ref=e32]
+        - paragraph [ref=e33]: 香港零售市場最新統計數據顯示，截止至今年2月，本地零售銷售額已明顯回升，按年升19.3%。然而，與銷售額同步上升的是四大核心商業區（旺角，尖沙咀，中環，銅鑼灣）的商舖空置率。
+      - figure "圖表1：零售業銷貨價值指數按年變動百分率 VS 香港每月入境旅客人次（雙軸散點）" [ref=e34]:
+        - generic [ref=e36]: 零售業銷貨價值指數按年變動百分率 VS 香港每月入境旅客人次
+        - generic [ref=e39]:
+          - text: 數據來源：零售業銷貨價值按年變動百分率——
+          - link "香港特別行政區政府統計處" [ref=e40] [cursor=pointer]:
+            - /url: https://www.censtatd.gov.hk/tc/web_table.html?id=620-67001
+          - text: ；訪港旅客人數按年變動百分率——
+          - link "香港旅業網" [ref=e41] [cursor=pointer]:
+            - /url: https://partnernet.hktb.com/tc/research_statistics/tourism_performance/index.html
+          - text: 。
+      - generic [ref=e42]:
+        - paragraph [ref=e43]: 據香港特別行政區政府統計處及香港旅業網公布的數據顯示，今年首兩個月零售銷售按年上升近20%，同期訪港旅客人次升幅達到40%，近1000萬人次。訪港旅客增長與零售市場表現呈現同向走勢，兩者關聯性密切。
+        - paragraph [ref=e44]: 旅客增長為市場提供穩定消費來源，對零售業形成正面支撐，反映出行業正處於由客流帶動的調整及恢復階段。
+    - generic [ref=e45]:
+      - generic [ref=e48]: "2"
+      - generic [ref=e49]:
+        - heading "實際乏力：空置率上升" [level=2] [ref=e50]
+        - paragraph [ref=e51]: 與此同時，市場另一端卻出現明顯收縮跡象。四大核心商業區商舖空置率持續上升，部分地段空置情況尤為突出。根據美聯工商舖資料研究部最新資料顯示，整體核心區的商鋪空置率已從2024年的10.65%升至2025年的12.0%，其中中環和銅鑼灣的鋪位空置情況最為突出，分別攀升至15.0%及9.8% 。即便是在傳統旺區如尖沙咀和旺角，商鋪丟空的情況也十分普遍，反映出核心商業地帶的租務表現正持續受壓。
+      - figure "香港四核心區商舖空置率分佈地圖" [ref=e52]:
+        - generic [ref=e54]: 四核心區商舖空置率分佈地圖
+        - generic [ref=e57]:
+          - text: 數據來源：
+          - link "美聯工商舖資料研究部" [ref=e58] [cursor=pointer]:
+            - /url: https://www.midlandici.com.hk/ics/property/research/vacant_shop_report_2025q3_ebook
+      - figure "2024年-2025年四核心區空置率平均變化" [ref=e59]:
+        - generic [ref=e61]: 2024年-2025年四核心區空置率平均變化
+        - generic [ref=e64]:
+          - text: 數據來源：
+          - link "美聯工商鋪資料研究部" [ref=e65] [cursor=pointer]:
+            - /url: https://www.midlandici.com.hk/ics/property/research/vacant_shop_report_2025q3_ebook
+    - generic [ref=e66]:
+      - generic [ref=e69]: "3"
+      - generic [ref=e70]:
+        - heading "成本端擠壓：租金與人工" [level=2] [ref=e71]
+        - paragraph [ref=e72]: 造成這一「銷售升、空置增」現象的關鍵，在於成本端的持續擠壓。租金，是最直接的壓力來源之一。隨著市場預期回暖，核心區舖租止跌回升。 同時，人力成本同樣上行。在勞動力供給趨緊的背景下，零售行業工資水平持續攀升，進一步侵蝕利潤空間。根據高力國際發表《2026 年第一季市場報告》顯示，核心一線街舖租金預測在2026年攀升 5%。
+      - figure "圖表3和圖表4：租金指數變化與零售行業工資中位數" [ref=e73]:
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - text: 租金數據來源：
+            - link "高力" [ref=e79] [cursor=pointer]:
+              - /url: https://www.colliers.com/download-article?itemId=01e0faf2-b695-4f5c-bb4e-670fb818b756
+          - generic [ref=e80]:
+            - text: 工資數據來源：
+            - link "香港特別行政區政府統計處" [ref=e81] [cursor=pointer]:
+              - /url: https://www.censtatd.gov.hk/tc/web_table.html?id=220-23015#
+      - generic [ref=e83]:
+        - text: 在這種情況下，不少商戶選擇縮減規模甚至退出市場。一名受訪服裝零售商張先生表示，其原本在市區經營兩家門店，一家在中環，一家在旺角，但在租金及人工成本持續上漲的壓力下，最終被迫辭退該店跟他一同共事了幾年的夥計，隨後又關閉了位於中環的店舖。僅保留租金偏低的門店以維持收益。張先生無奈地表達到：「儘管生意看起來是變好了，但實際來看利潤反而更薄了。」
+        - img "張偉男先生" [ref=e84]
+        - text: （56歲的張偉男先生，表示自己年紀大了，雖然對中環的店有很深的感情，但無奈於經濟壓力及考慮自身身體因素，最後選擇關閉中環店，保留離家更近的旺角店。）
+    - generic [ref=e85]:
+      - generic [ref=e88]: "4"
+      - generic [ref=e89]:
+        - heading "利潤承壓，結業增加" [level=2] [ref=e90]
+        - paragraph [ref=e91]: 數據亦反映出，儘管整體銷售額回升，但結業店鋪數量也在同步增加。參考HK01報道及Facebook群組「全港店鋪執笠結業消息關注組」公開資料，經本報記者自行統計，2026年首四月平均每月有9.75家零售店鋪結業，對比去年后四月平均每月6.3家結業店鋪，上升近一倍。在零售業回升的情況下，店鋪結業潮仍在繼續。
+      - figure "2025年Q3與2026年Q1平均每月結業店鋪數量" [ref=e92]:
+        - generic [ref=e94]: 2025年Q3與2026年Q1平均每月結業店鋪數量。
+        - generic "結業店舖名單" [ref=e96]:
+          - table [ref=e97]:
+            - rowgroup [ref=e98]:
+              - row "序號 店名 結業日期 地址 / 分店資訊" [ref=e99]:
+                - columnheader "序號" [ref=e100]
+                - columnheader "店名" [ref=e101]
+                - columnheader "結業日期" [ref=e102]
+                - columnheader "地址 / 分店資訊" [ref=e103]
+            - rowgroup [ref=e104]:
+              - row "1 大興錶行 3月19日 荃灣眾安街" [ref=e105]:
+                - cell "1" [ref=e106]
+                - cell "大興錶行" [ref=e107]
+                - cell "3月19日" [ref=e108]
+                - cell "荃灣眾安街" [ref=e109]
+              - row "2 先施百貨 1月4日 深水埗西九龍中心" [ref=e110]:
+                - cell "2" [ref=e111]
+                - cell "先施百貨" [ref=e112]
+                - cell "1月4日" [ref=e113]
+                - cell "深水埗西九龍中心" [ref=e114]
+              - row "3 元安文具 1月16日 北角模範邨" [ref=e115]:
+                - cell "3" [ref=e116]
+                - cell "元安文具" [ref=e117]
+                - cell "1月16日" [ref=e118]
+                - cell "北角模範邨" [ref=e119]
+              - row "4 和記傢俬裝飾公司 2月28日 沙田乙明邨" [ref=e120]:
+                - cell "4" [ref=e121]
+                - cell "和記傢俬裝飾公司" [ref=e122]
+                - cell "2月28日" [ref=e123]
+                - cell "沙田乙明邨" [ref=e124]
+              - row "5 馮良記錶行 3月30日 灣仔莊士敦道" [ref=e125]:
+                - cell "5" [ref=e126]
+                - cell "馮良記錶行" [ref=e127]
+                - cell "3月30日" [ref=e128]
+                - cell "灣仔莊士敦道" [ref=e129]
+              - row "6 文昌文具公司 3月31日 上環孖沙街" [ref=e130]:
+                - cell "6" [ref=e131]
+                - cell "文昌文具公司" [ref=e132]
+                - cell "3月31日" [ref=e133]
+                - cell "上環孖沙街" [ref=e134]
+              - row "7 小息零食 3月31日 葵芳葵芳廣場" [ref=e135]:
+                - cell "7" [ref=e136]
+                - cell "小息零食" [ref=e137]
+                - cell "3月31日" [ref=e138]
+                - cell "葵芳葵芳廣場" [ref=e139]
+              - row "8 HotMaxx 好特賣 2月中旬 葵芳分店" [ref=e140]:
+                - cell "8" [ref=e141]
+                - cell "HotMaxx 好特賣" [ref=e142]
+                - cell "2月中旬" [ref=e143]
+                - cell "葵芳分店" [ref=e144]
+              - row "9 H&M 2月21日 銅鑼灣旗艦店" [ref=e145]:
+                - cell "9" [ref=e146]
+                - cell "H&M" [ref=e147]
+                - cell "2月21日" [ref=e148]
+                - cell "銅鑼灣旗艦店" [ref=e149]
+              - row "10 H&M 2月22日 九龍塘又一城" [ref=e150]:
+                - cell "10" [ref=e151]
+                - cell "H&M" [ref=e152]
+                - cell "2月22日" [ref=e153]
+                - cell "九龍塘又一城" [ref=e154]
+              - row "11 Pierre Hermé Paris 3月31日 中環國際金融中心商場" [ref=e155]:
+                - cell "11" [ref=e156]
+                - cell "Pierre Hermé Paris" [ref=e157]
+                - cell "3月31日" [ref=e158]
+                - cell "中環國際金融中心商場" [ref=e159]
+              - row "12 本土時裝店 HISSO 4月7日前全線結業 共 12 間：觀塘 APM、九龍灣淘大商場、九龍灣德福廣場、啟德零售館、銅鑼灣皇室堡、旺角 T.O.P.、旺角朗豪坊、沙田新城市廣場、葵芳新都會、將軍澳新都城中心、荃灣荃新天地、荃灣千色" [ref=e160]:
+                - cell "12" [ref=e161]
+                - cell "本土時裝店 HISSO" [ref=e162]
+                - cell "4月7日前全線結業" [ref=e163]
+                - cell "共 12 間：觀塘 APM、九龍灣淘大商場、九龍灣德福廣場、啟德零售館、銅鑼灣皇室堡、旺角 T.O.P.、旺角朗豪坊、沙田新城市廣場、葵芳新都會、將軍澳新都城中心、荃灣荃新天地、荃灣千色" [ref=e164]
+              - row "13 本土時裝店 Story Behind 4月7日前全線結業 共 6 間：銅鑼灣 wwwtc mall、荃灣荃新天地、旺角 T.O.P.、觀塘 APM、沙田新城市廣場、九龍灣德福廣場" [ref=e165]:
+                - cell "13" [ref=e166]
+                - cell "本土時裝店 Story Behind" [ref=e167]
+                - cell "4月7日前全線結業" [ref=e168]
+                - cell "共 6 間：銅鑼灣 wwwtc mall、荃灣荃新天地、旺角 T.O.P.、觀塘 APM、沙田新城市廣場、九龍灣德福廣場" [ref=e169]
+              - row "14 元安文具 1月17日 北角模範邨" [ref=e170]:
+                - cell "14" [ref=e171]
+                - cell "元安文具" [ref=e172]
+                - cell "1月17日" [ref=e173]
+                - cell "北角模範邨" [ref=e174]
+              - row "15 Fortnum & Mason（英國王室御用品牌） 1月25日 尖東 K11 MUSEA 店" [ref=e175]:
+                - cell "15" [ref=e176]
+                - cell "Fortnum & Mason（英國王室御用品牌）" [ref=e177]
+                - cell "1月25日" [ref=e178]
+                - cell "尖東 K11 MUSEA 店" [ref=e179]
+              - row "16 陳聯馨香莊 2月5日 西環石塘咀" [ref=e180]:
+                - cell "16" [ref=e181]
+                - cell "陳聯馨香莊" [ref=e182]
+                - cell "2月5日" [ref=e183]
+                - cell "西環石塘咀" [ref=e184]
+              - row "17 百佳超級市場 4月22日 香港仔田灣商場" [ref=e185]:
+                - cell "17" [ref=e186]
+                - cell "百佳超級市場" [ref=e187]
+                - cell "4月22日" [ref=e188]
+                - cell "香港仔田灣商場" [ref=e189]
+              - row "18 公友祥麻雀 3月28日 旺角上海街" [ref=e190]:
+                - cell "18" [ref=e191]
+                - cell "公友祥麻雀" [ref=e192]
+                - cell "3月28日" [ref=e193]
+                - cell "旺角上海街" [ref=e194]
+              - row "19 Fusion 3月11日 紅磡昇御商場內" [ref=e195]:
+                - cell "19" [ref=e196]
+                - cell "Fusion" [ref=e197]
+                - cell "3月11日" [ref=e198]
+                - cell "紅磡昇御商場內" [ref=e199]
+              - row "20 百佳分店 2月25日 西貢福民路" [ref=e200]:
+                - cell "20" [ref=e201]
+                - cell "百佳分店" [ref=e202]
+                - cell "2月25日" [ref=e203]
+                - cell "西貢福民路" [ref=e204]
+              - row "21 百佳分店 1月7日 大窩口商場二期" [ref=e205]:
+                - cell "21" [ref=e206]
+                - cell "百佳分店" [ref=e207]
+                - cell "1月7日" [ref=e208]
+                - cell "大窩口商場二期" [ref=e209]
+              - row "22 彈珠格仔舖 3月1日 旺角銀城商場" [ref=e210]:
+                - cell "22" [ref=e211]
+                - cell "彈珠格仔舖" [ref=e212]
+                - cell "3月1日" [ref=e213]
+                - cell "旺角銀城商場" [ref=e214]
+              - row "23 LINE FRIENDS Store 1月1日 觀塘 APM" [ref=e215]:
+                - cell "23" [ref=e216]
+                - cell "LINE FRIENDS Store" [ref=e217]
+                - cell "1月1日" [ref=e218]
+                - cell "觀塘 APM" [ref=e219]
+        - generic [ref=e221]:
+          - text: 數據來源：
+          - link "美聯工商舖資料研究部" [ref=e222] [cursor=pointer]:
+            - /url: https://www.midlandici.com.hk/ics/property/research/vacant_shop_report_2025q3_ebook
+          - text: ；
+          - link "HK01" [ref=e223] [cursor=pointer]:
+            - /url: https://www.hk01.com/%E7%A4%BE%E6%9C%83%E6%96%B0%E8%81%9E/60330654/%E7%B5%90%E6%A5%AD%E6%BD%AE-%E9%A6%96%E5%AD%A3%E8%87%B3%E5%B0%9130%E5%BA%97%E5%91%8A%E5%88%A5-%E5%85%83%E6%97%A6-%E9%9F%BF%E9%A0%AD%E7%82%AE-fortnum-mason%E5%A2%9F%E5%86%9A
+          - text: ；
+          - link "Facebook群組「全港店舖執笠結業消息關注組」" [ref=e224] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/g/1RckEDCmxD/
+    - region "結論" [ref=e225]:
+      - paragraph [ref=e228]: 越來越多的店舖結業可以看出，當前香港零售市場的復蘇情況並沒有展現出數據所體現出來的樂觀。在租金及人工成本未見明顯回落之前，商戶經營壓力仍將持續，商舖空置率短期內或維持高位。如何在消費回升與成本上行之間取得平衡，成為了零售業下一階段復蘇的關鍵。

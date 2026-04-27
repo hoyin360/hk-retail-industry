@@ -1,0 +1,27 @@
+{
+  "title": "零售業銷貨價值指數按年變動百分率 VS 香港每月入境旅客人次",
+  "series": [
+    { "date": "2025-09", "retail_yoy_pct": 6.0, "visitors": 3292197, "visitors_yoy_pct": 7.52 },
+    { "date": "2025-10", "retail_yoy_pct": 6.9, "visitors": 4588515, "visitors_yoy_pct": 12.19 },
+    { "date": "2025-11", "retail_yoy_pct": 6.5, "visitors": 4189272, "visitors_yoy_pct": 17.4 },
+    { "date": "2025-12", "retail_yoy_pct": 6.6, "visitors": 4645397, "visitors_yoy_pct": 9.16 },
+    { "date": "2026-01", "retail_yoy_pct": 5.5, "visitors": 4811700, "visitors_yoy_pct": 1.47 },
+    { "date": "2026-02", "retail_yoy_pct": 19.3, "visitors": 5141714, "visitors_yoy_pct": 40.19 }
+  ],
+  "meta": {
+    "retail_metric": "零售業銷貨價值指數按年變動百分率",
+    "visitors_metric": "香港每月入境旅客人次",
+    "visitors_yoy_metric": "香港每月入境旅客人次同比增長率",
+    "sources": [
+      {
+        "label": "香港旅遊發展局：旅業市場表現",
+        "url": "https://partnernet.hktb.com/tc/research_statistics/tourism_performance/index.html"
+      },
+      {
+        "label": "香港特別行政區政府統計處：統計表 620-67001",
+        "url": "https://www.censtatd.gov.hk/tc/web_table.html?id=620-67001"
+      }
+    ]
+  }
+}
+

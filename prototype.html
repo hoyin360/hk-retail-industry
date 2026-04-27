@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>銷售額創新高 商鋪空置率卻攀升：市場繁榮背後的經營困境</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Han+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  --c-bg: #F7F5F0;
+  --c-bg-dark: #1A1714;
+  --c-bg-warm: #F0EBE1;
+  --c-text: #1A1714;
+  --c-text-light: #6B6560;
+  --c-text-muted: #9E9790;
+  --c-accent-up: #C8372D;
+  --c-accent-up-light: rgba(200,55,45,0.08);
+  --c-accent-down: #2D6BC8;
+  --c-accent-down-light: rgba(45,107,200,0.08);
+  --c-accent-warn: #D4890A;
+  --c-accent-warn-light: rgba(212,137,10,0.08);
+  --c-border: #DDD8D0;
+  --c-border-light: #EBE7E0;
+  --c-green: #2D8C5A;
+  --c-green-light: rgba(45,140,90,0.08);
+
+  --font-serif: 'Noto Serif SC', 'Source Han Serif SC', 'SimSun', serif;
+  --font-sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+  --w-max: 960px;
+  --w-narrow: 720px;
+  --w-chart: 840px;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===== Utility ===== */
+.container { max-width: var(--w-max); margin: 0 auto; padding: 0 32px; }
+.narrow { max-width: var(--w-narrow); margin: 0 auto; padding: 0 32px; }
+
+/* ===== Scroll Animations ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+              transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+.reveal-delay-4 { transition-delay: 0.48s; }
+
+/* ===== Top Bar ===== */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(247,245,240,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--c-border-light);
+  padding: 12px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 13px; color: var(--c-text-light);
+  transition: transform 0.3s;
+}
+.topbar-brand {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--c-text);
+  letter-spacing: 2px;
+}
+.topbar-tag {
+  background: var(--c-accent-up);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 32px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(200,55,45,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 60%, rgba(45,107,200,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-meta {
+  font-size: 13px;
+  color: var(--c-text-muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.hero-meta span {
+  color: var(--c-accent-up);
+  margin-right: 12px;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1.3;
+  max-width: 800px;
+  margin-bottom: 32px;
+  letter-spacing: -0.5px;
+}
+.hero-title .highlight-up {
+  color: var(--c-accent-up);
+  position: relative;
+}
+.hero-title .highlight-down {
+  color: var(--c-accent-down);
+  position: relative;
+}
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: var(--c-text-light);
+  max-width: 640px;
+  line-height: 1.7;
+  font-weight: 400;
+  margin-bottom: 48px;
+}
+.hero-kpi-row {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.hero-kpi {
+  position: relative;
+  padding-left: 20px;
+}
+.hero-kpi::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 4px; bottom: 4px;
+  width: 3px;
+  border-radius: 2px;
+}
+.hero-kpi.up::before { background: var(--c-accent-up); }
+.hero-kpi.down::before { background: var(--c-accent-down); }
+.hero-kpi-label {
+  font-size: 12px;
+  color: var(--c-text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.hero-kpi-value {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+.hero-kpi.up .hero-kpi-value { color: var(--c-accent-up); }
+.hero-kpi.down .hero-kpi-value { color: var(--c-accent-down); }
+.hero-kpi-note {
+  font-size: 13px;
+  color: var(--c-text-muted);
+  margin-top: 4px;
+}
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--c-text-muted);
+  letter-spacing: 2px;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+.scroll-hint-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--c-text-muted), transparent);
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ===== Section Divider ===== */
+.section-divider {
+  text-align: center;
+  padding: 80px 0 60px;
+  position: relative;
+}
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 1px;
+  background: var(--c-border);
+}
+.section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--c-border);
+  border-radius: 50%;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--c-bg);
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Prose ===== */
+.prose {
+  font-size: 17px;
+  line-height: 2;
+  color: var(--c-text);
+  margin-bottom: 32px;
+}
+.prose strong {
+  font-weight: 700;
+  color: var(--c-text);
+}
+.prose .num-up {
+  color: var(--c-accent-up);
+  font-weight: 700;
+  font-family: var(--font-serif);
+}
+.prose .num-down {
+  color: var(--c-accent-down);
+  font-weight: 700;
+  font-family: var(--font-serif);
+}
+
+/* ===== Section Headers ===== */
+.section-header {
+  margin-bottom: 48px;
+}
+.section-label {
+  font-size: 12px;
+  color: var(--c-text-muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.section-desc {
+  font-size: 16px;
+  color: var(--c-text-light);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* ===== Chart Container ===== */
+.chart-block {
+  background: #fff;
+  border: 1px solid var(--c-border-light);
+  border-radius: 8px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: var(--w-chart);
+  position: relative;
+}
+.chart-block-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.chart-block-subtitle {
+  font-size: 13px;
+  color: var(--c-text-muted);
+  margin-bottom: 28px;
+}
+.chart-source {
+  font-size: 11px;
+  color: var(--c-text-muted);
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--c-border-light);
+}
+
+/* SVG chart styles */
+.chart-svg {
+  width: 100%;
+  overflow: visible;
+}
+.chart-svg text {
+  font-family: var(--font-sans);
+}
+.axis-label {
+  fill: var(--c-text-muted);
+  font-size: 12px;
+}
+.axis-line {
+  stroke: var(--c-border-light);
+  stroke-width: 1;
+}
+.grid-line {
+  stroke: var(--c-border-light);
+  stroke-width: 0.5;
+  stroke-dasharray: 4 4;
+}
+
+/* ===== Divergence Chart ===== */
+.divergence-area-up {
+  fill: rgba(200,55,45,0.12);
+}
+.divergence-area-down {
+  fill: rgba(45,107,200,0.12);
+}
+.line-sales {
+  fill: none;
+  stroke: var(--c-accent-up);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.line-vacancy {
+  fill: none;
+  stroke: var(--c-accent-down);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.dot-sales { fill: var(--c-accent-up); }
+.dot-vacancy { fill: var(--c-accent-down); }
+
+/* ===== Callout / Annotation ===== */
+.chart-annotation {
+  position: absolute;
+  background: var(--c-bg-dark);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 200px;
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.chart-annotation::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+  background: var(--c-bg-dark);
+  transform: rotate(45deg);
+}
+
+/* ===== Key Insight Callout ===== */
+.insight-callout {
+  background: var(--c-bg-dark);
+  color: #fff;
+  padding: 56px 48px;
+  border-radius: 12px;
+  margin: 64px auto;
+  max-width: var(--w-chart);
+  position: relative;
+  overflow: hidden;
+}
+.insight-callout::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 50% 80% at 0% 0%, rgba(200,55,45,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 100% 100%, rgba(45,107,200,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.insight-callout-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+.insight-callout-text {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.6;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+.insight-callout-text .em-up {
+  color: #F07068;
+  font-weight: 700;
+}
+.insight-callout-text .em-down {
+  color: #6BA3E8;
+  font-weight: 700;
+}
+
+/* ===== Bar Chart ===== */
+.bar-group {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.bar-label {
+  width: 80px;
+  font-size: 13px;
+  color: var(--c-text-light);
+  text-align: right;
+  flex-shrink: 0;
+}
+.bar-track {
+  flex: 1;
+  height: 28px;
+  background: var(--c-border-light);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+}
+.bar-fill.red { background: var(--c-accent-up); }
+.bar-fill.blue { background: var(--c-accent-down); }
+.bar-fill.warn { background: var(--c-accent-warn); }
+.bar-fill.green { background: var(--c-green); }
+.bar-value {
+  width: 60px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  flex-shrink: 0;
+}
+
+/* ===== Cost Squeeze Diagram ===== */
+.squeeze-diagram {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: center;
+  margin: 48px auto;
+  max-width: 700px;
+}
+.squeeze-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.squeeze-item {
+  background: #fff;
+  border: 1px solid var(--c-border-light);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.squeeze-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+.squeeze-item-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.squeeze-item-label {
+  font-size: 13px;
+  color: var(--c-text-light);
+  margin-bottom: 4px;
+}
+.squeeze-item-value {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+}
+.squeeze-item-value.up { color: var(--c-accent-up); }
+.squeeze-item-value.down { color: var(--c-accent-down); }
+.squeeze-item-value.warn { color: var(--c-accent-warn); }
+.squeeze-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--c-text-muted);
+  font-weight: 500;
+}
+.squeeze-arrow svg {
+  width: 48px;
+  height: 48px;
+}
+
+/* ===== Waterfall / Profit Anatomy ===== */
+.waterfall {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+  height: 320px;
+  padding: 0 20px;
+  margin: 32px 0;
+}
+.waterfall-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 100px;
+  height: 100%;
+  justify-content: flex-end;
+}
+.waterfall-bar-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.waterfall-value {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.waterfall-bar {
+  width: 56px;
+  border-radius: 4px 4px 0 0;
+  transition: height 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.waterfall-label {
+  font-size: 12px;
+  color: var(--c-text-light);
+  margin-top: 10px;
+  text-align: center;
+  line-height: 1.4;
+}
+.waterfall-connector {
+  position: absolute;
+  border-top: 1px dashed var(--c-border);
+}
+
+/* ===== Conclusion Section ===== */
+.conclusion {
+  background: var(--c-bg-warm);
+  padding: 80px 32px;
+  margin-top: 80px;
+  border-top: 1px solid var(--c-border);
+}
+.conclusion-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+.conclusion-card {
+  background: #fff;
+  border: 1px solid var(--c-border-light);
+  border-radius: 8px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.conclusion-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.conclusion-card.card-red::before { background: var(--c-accent-up); }
+.conclusion-card.card-blue::before { background: var(--c-accent-down); }
+.conclusion-card.card-warn::before { background: var(--c-accent-warn); }
+.conclusion-card-num {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.conclusion-card.card-red .conclusion-card-num { color: var(--c-accent-up); }
+.conclusion-card.card-blue .conclusion-card-num { color: var(--c-accent-down); }
+.conclusion-card.card-warn .conclusion-card-num { color: var(--c-accent-warn); }
+.conclusion-card-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.conclusion-card-desc {
+  font-size: 14px;
+  color: var(--c-text-light);
+  line-height: 1.7;
+}
+
+/* ===== Footer ===== */
+.footer {
+  padding: 48px 32px;
+  border-top: 1px solid var(--c-border);
+  text-align: center;
+  font-size: 13px;
+  color: var(--c-text-muted);
+  line-height: 2;
+}
+.footer-team {
+  font-weight: 500;
+  color: var(--c-text-light);
+  margin-bottom: 8px;
+}
+
+/* ===== Legend ===== */
+.chart-legend {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--c-text-light);
+}
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.legend-dot.red { background: var(--c-accent-up); }
+.legend-dot.blue { background: var(--c-accent-down); }
+.legend-line {
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.legend-line.red { background: var(--c-accent-up); }
+.legend-line.blue { background: var(--c-accent-down); }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero-kpi-row { flex-direction: column; gap: 28px; }
+  .squeeze-diagram { grid-template-columns: 1fr; }
+  .squeeze-arrow { transform: rotate(90deg); }
+  .conclusion-grid { grid-template-columns: 1fr; }
+  .chart-block { padding: 24px 20px; }
+  .insight-callout { padding: 40px 28px; }
+}
+
+/* ===== Methodology Note ===== */
+.methodology {
+  background: #fff;
+  border: 1px solid var(--c-border-light);
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin: 48px auto;
+  max-width: var(--w-narrow);
+}
+.methodology-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  margin-bottom: 12px;
+}
+.methodology-text {
+  font-size: 14px;
+  color: var(--c-text-light);
+  line-height: 1.8;
+}
+
+/* ===== Progress Bar (reading) ===== */
+.reading-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--c-accent-up), var(--c-accent-down));
+  z-index: 200;
+  transition: width 0.1s;
+}
+
+/* ===== Animated counter ===== */
+.counter-animated {
+  display: inline-block;
+}
+</style>
+</head>
+<body>
+
+<!-- Reading Progress -->
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- Top Bar -->
+<div class="topbar" id="topbar">
+  <div class="topbar-brand">數據深度</div>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <span class="topbar-tag">深度調查</span>
+    <span>2026.04</span>
+  </div>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-meta reveal">
+      <span>▎</span> 香港零售市場 · 數據新聞
+    </div>
+    <h1 class="hero-title reveal reveal-delay-1">
+      銷售額<span class="highlight-up">創新高</span><br>
+      商鋪空置率卻<span class="highlight-down">攀升</span>
+    </h1>
+    <p class="hero-subtitle reveal reveal-delay-2">
+      市場繁榮背後的經營困境——當亮眼的銷售數字無法掩蓋商戶的生存壓力
+    </p>
+    <div class="hero-kpi-row reveal reveal-delay-3">
+      <div class="hero-kpi up">
+        <div class="hero-kpi-label">2月零售銷售額</div>
+        <div class="hero-kpi-value">+16.2%</div>
+        <div class="hero-kpi-note">按年增長 · 創疫後新高</div>
+      </div>
+      <div class="hero-kpi down">
+        <div class="hero-kpi-label">核心區商鋪空置率</div>
+        <div class="hero-kpi-value">14.6%</div>
+        <div class="hero-kpi-note">同比上升 3.8 個百分點</div>
+      </div>
+      <div class="hero-kpi" style="border-left-color:var(--c-accent-warn)">
+        <div class="hero-kpi-label">商戶平均利潤率</div>
+        <div class="hero-kpi-value" style="color:var(--c-accent-warn)">3.2%</div>
+        <div class="hero-kpi-note">十年最低水平</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>向下滾動</span>
+    <div class="scroll-hint-line"></div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 1: Sales Data ==================== -->
+<div class="section-divider reveal">
+  <div class="section-number">1</div>
+</div>
+
+<section class="container" style="padding-top:0; padding-bottom:80px;">
+  <div class="narrow">
+    <div class="section-header reveal">
+      <div class="section-label">表面繁榮</div>
+      <h2 class="section-title">銷售額強勁反彈，數據表現亮眼</h2>
+      <p class="section-desc">香港零售業的銷售總額在2026年2月錄得顯著增長，已超越疫情期間的低位，整體數據表現向好。</p>
+    </div>
+    <p class="prose reveal">
+      根據統計處最新數據，2026年2月香港零售業總銷貨價值達 <span class="num-up">$342億</span>，按年大幅增長 <span class="num-up">16.2%</span>，創下疫後單月最高紀錄。珠寶鐘錶、服裝及百貨類別增幅尤為明顯，分別錄得 <span class="num-up">22.4%</span>、<span class="num-up">18.7%</span> 及 <span class="num-up">15.3%</span> 的按年升幅。
+    </p>
+  </div>
+
+  <!-- Sales Chart -->
+  <div class="chart-block reveal">
+    <div class="chart-block-title">香港月度零售銷貨價值</div>
+    <div class="chart-block-subtitle">2019年1月 – 2026年2月 · 單位：億港元</div>
+    <svg class="chart-svg" viewBox="0 0 760 300" id="salesChart">
+      <!-- Grid -->
+      <line x1="60" y1="20" x2="60" y2="250" class="axis-line"/>
+      <line x1="60" y1="250" x2="740" y2="250" class="axis-line"/>
+      <!-- Y axis labels -->
+      <text x="55" y="250" text-anchor="end" class="axis-label">0</text>
+      <text x="55" y="192" text-anchor="end" class="axis-label">100</text>
+      <line x1="60" y1="192" x2="740" y2="192" class="grid-line"/>
+      <text x="55" y="134" text-anchor="end" class="axis-label">200</text>
+      <line x1="60" y1="134" x2="740" y2="134" class="grid-line"/>
+      <text x="55" y="76" text-anchor="end" class="axis-label">300</text>
+      <line x1="60" y1="76" x2="740" y2="76" class="grid-line"/>
+      <text x="55" y="24" text-anchor="end" class="axis-label">400</text>
+      <line x1="60" y1="20" x2="740" y2="20" class="grid-line"/>
+
+      <!-- X axis labels -->
+      <text x="90" y="270" text-anchor="middle" class="axis-label">2019</text>
+      <text x="186" y="270" text-anchor="middle" class="axis-label">2020</text>
+      <text x="282" y="270" text-anchor="middle" class="axis-label">2021</text>
+      <text x="378" y="270" text-anchor="middle" class="axis-label">2022</text>
+      <text x="474" y="270" text-anchor="middle" class="axis-label">2023</text>
+      <text x="570" y="270" text-anchor="middle" class="axis-label">2024</text>
+      <text x="666" y="270" text-anchor="middle" class="axis-label">2025</text>
+      <text x="730" y="270" text-anchor="middle" class="axis-label">2026</text>
+
+      <!-- COVID shading -->
+      <rect x="155" y="20" width="200" height="230" fill="rgba(0,0,0,0.03)" rx="4"/>
+      <text x="255" y="14" text-anchor="middle" font-size="11" fill="#9E9790">疫情期間</text>
+
+      <!-- Sales line - approximate curve -->
+      <path class="line-sales" d="
+        M 90,68
+        L 120,82
+        L 155,90
+        L 186,170
+        L 210,195
+        L 240,180
+        L 270,175
+        L 300,182
+        L 330,178
+        L 360,185
+        L 378,190
+        L 400,172
+        L 430,165
+        L 460,155
+        L 490,140
+        L 520,125
+        L 550,110
+        L 570,105
+        L 600,95
+        L 630,88
+        L 660,80
+        L 690,72
+        L 720,56
+      " id="salesLine"/>
+
+      <!-- Highlight dot for Feb 2026 -->
+      <circle cx="720" cy="56" r="6" class="dot-sales" opacity="0.3"/>
+      <circle cx="720" cy="56" r="3.5" class="dot-sales"/>
+
+      <!-- Annotation for Feb 2026 -->
+      <g transform="translate(640, 30)">
+        <rect x="0" y="0" width="74" height="28" rx="4" fill="var(--c-accent-up)"/>
+        <text x="37" y="18" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">$342億</text>
+      </g>
+
+      <!-- Annotation for COVID low -->
+      <g transform="translate(170, 198)">
+        <rect x="0" y="0" width="74" height="28" rx="4" fill="var(--c-text-muted)" opacity="0.8"/>
+        <text x="37" y="18" text-anchor="middle" fill="#fff" font-size="12" font-weight="500">低位</text>
+      </g>
+    </svg>
+    <div class="chart-source">資料來源：香港特區政府統計處 · 零售業銷貨額月度報告（模擬數據，僅供原型展示）</div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 2: Vacancy ==================== -->
+<div class="section-divider reveal">
+  <div class="section-number">2</div>
+</div>
+
+<section class="container" style="padding-top:0; padding-bottom:80px;">
+  <div class="narrow">
+    <div class="section-header reveal">
+      <div class="section-label">暗流湧動</div>
+      <h2 class="section-title">商鋪空置率同步大幅上升</h2>
+      <p class="section-desc">與銷售數據的樂觀形成鮮明對比，核心商業區的商鋪空置率卻在攀升。</p>
+    </div>
+    <p class="prose reveal">
+      差餉物業估價署及主要地產代理的數據顯示，香港核心零售區（包括銅鑼灣、旺角、尖沙咀及中環）的商鋪空置率，在2026年首季已升至 <span class="num-down">14.6%</span>，較去年同期上升了 <span class="num-down">3.8個百分點</span>。其中旺角的空置率更高達 <span class="num-down">17.2%</span>，為十年來最高。
+    </p>
+  </div>
+
+  <!-- Vacancy Bar Chart by District -->
+  <div class="chart-block reveal">
+    <div class="chart-block-title">核心商業區商鋪空置率比較</div>
+    <div class="chart-block-subtitle">2026年第一季 vs 2025年第一季</div>
+    <div class="chart-legend">
+      <div class="legend-item"><div class="legend-dot blue"></div>2026 Q1</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--c-border)"></div>2025 Q1</div>
+    </div>
+
+    <div style="margin-top:8px">
+      <div style="margin-bottom:20px">
+        <div class="bar-group">
+          <div class="bar-label">旺角</div>
+          <div class="bar-track"><div class="bar-fill blue" data-width="86%" style="width:0"></div></div>
+          <div class="bar-value" style="color:var(--c-accent-down)">17.2%</div>
+        </div>
+        <div class="bar-group" style="opacity:0.45">
+          <div class="bar-label"></div>
+          <div class="bar-track"><div class="bar-fill" style="background:var(--c-border);width:62%"></div></div>
+          <div class="bar-value" style="color:var(--c-text-muted)">12.4%</div>
+        </div>
+      </div>
+      <div style="margin-bottom:20px">
+        <div class="bar-group">
+          <div class="bar-label">銅鑼灣</div>
+          <div class="bar-track"><div class="bar-fill blue" data-width="76%" style="width:0"></div></div>
+          <div class="bar-value" style="color:var(--c-accent-down)">15.1%</div>
+        </div>
+        <div class="bar-group" style="opacity:0.45">
+          <div class="bar-label"></div>
+          <div class="bar-track"><div class="bar-fill" style="background:var(--c-border);width:56%"></div></div>
+          <div class="bar-value" style="color:var(--c-text-muted)">11.2%</div>
+        </div>
+      </div>
+      <div style="margin-bottom:20px">
+        <div class="bar-group">
+          <div class="bar-label">尖沙咀</div>
+          <div class="bar-track"><div class="bar-fill blue" data-width="68%" style="width:0"></div></div>
+          <div class="bar-value" style="color:var(--c-accent-down)">13.6%</div>
+        </div>
+        <div class="bar-group" style="opacity:0.45">
+          <div class="bar-label"></div>
+          <div class="bar-track"><div class="bar-fill" style="background:var(--c-border);width:50%"></div></div>
+          <div class="bar-value" style="color:var(--c-text-muted)">10.1%</div>
+        </div>
+      </div>
+      <div>
+        <div class="bar-group">
+          <div class="bar-label">中環</div>
+          <div class="bar-track"><div class="bar-fill blue" data-width="62%" style="width:0"></div></div>
+          <div class="bar-value" style="color:var(--c-accent-down)">12.5%</div>
+        </div>
+        <div class="bar-group" style="opacity:0.45">
+          <div class="bar-label"></div>
+          <div class="bar-track"><div class="bar-fill" style="background:var(--c-border);width:45%"></div></div>
+          <div class="bar-value" style="color:var(--c-text-muted)">9.0%</div>
+        </div>
+      </div>
+    </div>
+    <div class="chart-source">資料來源：差餉物業估價署、主要地產代理行（模擬數據，僅供原型展示）</div>
+  </div>
+</section>
+
+<!-- ==================== KEY INSIGHT CALLOUT ==================== -->
+<div class="container">
+  <div class="insight-callout reveal">
+    <div class="insight-callout-icon">⚡</div>
+    <div class="insight-callout-text">
+      矛盾的核心：銷售額<span class="em-up">上升</span>代表市場總量的增長，卻不代表每間商戶都在賺錢。當<span class="em-down">成本增速</span>超過收入增速，利潤被擠壓——繁榮的數字下，是商戶被迫退場的現實。
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION 3: Cost Squeeze ==================== -->
+<div class="section-divider reveal">
+  <div class="section-number">3</div>
+</div>
+
+<section class="container" style="padding-top:0; padding-bottom:80px;">
+  <div class="narrow">
+    <div class="section-header reveal">
+      <div class="section-label">深層原因</div>
+      <h2 class="section-title">利潤被嚴重擠壓的三重壓力</h2>
+      <p class="section-desc">銷售額增長的同時，租金、人工、物料三大成本同步攀升，商戶利潤空間被持續壓縮。</p>
+    </div>
+  </div>
+
+  <!-- Cost Squeeze Visualization -->
+  <div class="squeeze-diagram reveal">
+    <div class="squeeze-col">
+      <div class="squeeze-item">
+        <div class="squeeze-item-icon">📈</div>
+        <div class="squeeze-item-label">銷售額增長</div>
+        <div class="squeeze-item-value up">+16.2%</div>
+      </div>
+    </div>
+    <div class="squeeze-arrow">
+      <svg viewBox="0 0 48 48" fill="none">
+        <path d="M8 24H40M40 24L28 14M40 24L28 34" stroke="var(--c-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>被抵消</span>
+    </div>
+    <div class="squeeze-col">
+      <div class="squeeze-item">
+        <div class="squeeze-item-icon">🏢</div>
+        <div class="squeeze-item-label">核心區租金</div>
+        <div class="squeeze-item-value warn">+23.5%</div>
+      </div>
+      <div class="squeeze-item">
+        <div class="squeeze-item-icon">👥</div>
+        <div class="squeeze-item-label">人工成本</div>
+        <div class="squeeze-item-value warn">+12.8%</div>
+      </div>
+      <div class="squeeze-item">
+        <div class="squeeze-item-icon">📦</div>
+        <div class="squeeze-item-label">物料及物流</div>
+        <div class="squeeze-item-value warn">+9.4%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Waterfall: Profit Anatomy -->
+  <div class="chart-block reveal">
+    <div class="chart-block-title">商戶利潤解剖：每 $100 銷售額的去向</div>
+    <div class="chart-block-subtitle">以中型零售商戶（200-500呎）為例 · 2026年第一季估算</div>
+
+    <div class="waterfall" id="waterfallChart">
+      <div class="waterfall-col">
+        <div class="waterfall-bar-wrap">
+          <div class="waterfall-value" style="color:var(--c-accent-up)">$100</div>
+          <div class="waterfall-bar" style="height:0;background:var(--c-accent-up)" data-height="240px"></div>
+        </div>
+        <div class="waterfall-label">銷售額</div>
+      </div>
+      <div class="waterfall-col">
+        <div class="waterfall-bar-wrap">
+          <div class="waterfall-value" style="color:var(--c-accent-warn)">-$42</div>
+          <div class="waterfall-bar" style="height:0;background:var(--c-accent-warn);opacity:0.8" data-height="100px"></div>
+        </div>
+        <div class="waterfall-label">貨品<br>成本</div>
+      </div>
+      <div class="waterfall-col">
+        <div class="waterfall-bar-wrap">
+          <div class="waterfall-value" style="color:var(--c-accent-warn)">-$28</div>
+          <div class="waterfall-bar" style="height:0;background:var(--c-accent-warn);opacity:0.7" data-height="67px"></div>
+        </div>
+        <div class="waterfall-label">租金</div>
+      </div>
+      <div class="waterfall-col">
+        <div class="waterfall-bar-wrap">
+          <div class="waterfall-value" style="color:var(--c-accent-warn)">-$18</div>
+          <div class="waterfall-bar" style="height:0;background:var(--c-accent-warn);opacity:0.6" data-height="43px"></div>
+        </div>
+        <div class="waterfall-label">人工</div>
+      </div>
+      <div class="waterfall-col">
+        <div class="waterfall-bar-wrap">
+          <div class="waterfall-value" style="color:var(--c-accent-warn)">-$8.8</div>
+          <div class="waterfall-bar" style="height:0;background:var(--c-accent-warn);opacity:0.5" data-height="21px"></div>
+        </div>
+        <div class="waterfall-label">水電<br>雜費</div>
+      </div>
+      <div class="waterfall-col">
+        <div class="waterfall-bar-wrap">
+          <div class="waterfall-value" style="color:var(--c-green)">$3.2</div>
+          <div class="waterfall-bar" style="height:0;background:var(--c-green)" data-height="8px"></div>
+        </div>
+        <div class="waterfall-label">淨利潤</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:8px;">
+      <span style="display:inline-block;background:var(--c-accent-warn-light);border:1px solid rgba(212,137,10,0.2);border-radius:4px;padding:8px 20px;font-size:14px;color:var(--c-accent-warn);font-weight:700;">
+        利潤率僅 3.2% —— 一次租金調整即可導致虧損
+      </span>
+    </div>
+
+    <div class="chart-source">數據來源：業界訪談及公開財報估算（模擬數據，僅供原型展示）</div>
+  </div>
+
+  <div class="narrow">
+    <p class="prose reveal">
+      從利潤結構可以清楚看到，當銷售額每 $100 中有 <span class="num-up">$96.8</span> 被各項成本吞噬，商戶的生存空間已極為脆弱。尤其是租金佔比從2019年的 18% 攀升至目前的 <span class="num-down">28%</span>，成為壓垮商戶的最大單一因素。一旦續租加價或客流稍減，商戶便面臨虧損甚至結業。
+    </p>
+  </div>
+</section>
+
+<!-- ==================== SECTION 4: Divergence ==================== -->
+<div class="section-divider reveal">
+  <div class="section-number">4</div>
+</div>
+
+<section class="container" style="padding-top:0; padding-bottom:40px;">
+  <div class="narrow">
+    <div class="section-header reveal">
+      <div class="section-label">趨勢分化</div>
+      <h2 class="section-title">兩條曲線的背離：被數字掩蓋的真相</h2>
+      <p class="section-desc">將銷售額指數與空置率放在同一張圖上，矛盾一目了然。</p>
+    </div>
+  </div>
+
+  <!-- Dual-axis Divergence Chart -->
+  <div class="chart-block reveal">
+    <div class="chart-block-title">銷售額指數 vs 商鋪空置率走勢</div>
+    <div class="chart-block-subtitle">2019 – 2026 · 指數化（2019 = 100）</div>
+    <div class="chart-legend">
+      <div class="legend-item"><div class="legend-line red"></div>零售銷售額指數</div>
+      <div class="legend-item"><div class="legend-line blue"></div>核心區空置率</div>
+    </div>
+
+    <svg class="chart-svg" viewBox="0 0 760 320" id="divergenceChart">
+      <!-- Grid -->
+      <line x1="60" y1="20" x2="60" y2="270" class="axis-line"/>
+      <line x1="60" y1="270" x2="720" y2="270" class="axis-line"/>
+      <line x1="720" y1="20" x2="720" y2="270" class="axis-line" stroke-dasharray="4 4"/>
+
+      <!-- Y-left labels (Sales Index) -->
+      <text x="55" y="270" text-anchor="end" class="axis-label" fill="var(--c-accent-up)">40</text>
+      <text x="55" y="208" text-anchor="end" class="axis-label" fill="var(--c-accent-up)">60</text>
+      <line x1="60" y1="208" x2="720" y2="208" class="grid-line"/>
+      <text x="55" y="145" text-anchor="end" class="axis-label" fill="var(--c-accent-up)">80</text>
+      <line x1="60" y1="145" x2="720" y2="145" class="grid-line"/>
+      <text x="55" y="83" text-anchor="end" class="axis-label" fill="var(--c-accent-up)">100</text>
+      <line x1="60" y1="83" x2="720" y2="83" class="grid-line"/>
+      <text x="55" y="20" text-anchor="end" class="axis-label" fill="var(--c-accent-up)">120</text>
+
+      <!-- Y-right labels (Vacancy %) -->
+      <text x="728" y="270" text-anchor="start" class="axis-label" fill="var(--c-accent-down)">4%</text>
+      <text x="728" y="208" text-anchor="start" class="axis-label" fill="var(--c-accent-down)">8%</text>
+      <text x="728" y="145" text-anchor="start" class="axis-label" fill="var(--c-accent-down)">12%</text>
+      <text x="728" y="83" text-anchor="start" class="axis-label" fill="var(--c-accent-down)">16%</text>
+      <text x="728" y="20" text-anchor="start" class="axis-label" fill="var(--c-accent-down)">20%</text>
+
+      <!-- Y axis labels -->
+      <text x="15" y="145" text-anchor="middle" class="axis-label" fill="var(--c-accent-up)" transform="rotate(-90, 15, 145)" font-size="11">銷售額指數</text>
+      <text x="755" y="145" text-anchor="middle" class="axis-label" fill="var(--c-accent-down)" transform="rotate(90, 755, 145)" font-size="11">空置率 %</text>
+
+      <!-- X axis labels -->
+      <text x="108" y="290" text-anchor="middle" class="axis-label">2019</text>
+      <text x="204" y="290" text-anchor="middle" class="axis-label">2020</text>
+      <text x="300" y="290" text-anchor="middle" class="axis-label">2021</text>
+      <text x="396" y="290" text-anchor="middle" class="axis-label">2022</text>
+      <text x="492" y="290" text-anchor="middle" class="axis-label">2023</text>
+      <text x="588" y="290" text-anchor="middle" class="axis-label">2024</text>
+      <text x="684" y="290" text-anchor="middle" class="axis-label">2026</text>
+
+      <!-- Divergence shading area -->
+      <path d="
+        M 108,83
+        L 204,180
+        L 300,165
+        L 396,148
+        L 492,120
+        L 588,96
+        L 684,50
+        L 684,110
+        L 588,165
+        L 492,175
+        L 396,185
+        L 300,190
+        L 204,195
+        L 108,232
+        Z
+      " fill="url(#divergeGrad)" opacity="0.5"/>
+
+      <defs>
+        <linearGradient id="divergeGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--c-accent-up)" stop-opacity="0.1"/>
+          <stop offset="50%" stop-color="transparent" stop-opacity="0"/>
+          <stop offset="100%" stop-color="var(--c-accent-down)" stop-opacity="0.1"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Sales Index Line -->
+      <path class="line-sales" d="
+        M 108,83
+        L 204,180
+        L 300,165
+        L 396,148
+        L 492,120
+        L 588,96
+        L 684,50
+      "/>
+      <circle cx="108" cy="83" r="4" class="dot-sales"/>
+      <circle cx="684" cy="50" r="6" class="dot-sales" opacity="0.3"/>
+      <circle cx="684" cy="50" r="3.5" class="dot-sales"/>
+
+      <!-- Vacancy Line -->
+      <path class="line-vacancy" d="
+        M 108,232
+        L 204,195
+        L 300,190
+        L 396,185
+        L 492,175
+        L 588,165
+        L 684,110
+      "/>
+      <circle cx="108" cy="232" r="4" class="dot-vacancy"/>
+      <circle cx="684" cy="110" r="6" class="dot-vacancy" opacity="0.3"/>
+      <circle cx="684" cy="110" r="3.5" class="dot-vacancy"/>
+
+      <!-- Annotation: divergence -->
+      <line x1="684" y1="50" x2="684" y2="110" stroke="var(--c-text-muted)" stroke-width="1" stroke-dasharray="3 3"/>
+      <g transform="translate(696,72)">
+        <rect x="0" y="0" width="48" height="24" rx="4" fill="var(--c-bg-dark)"/>
+        <text x="24" y="16" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">背離</text>
+      </g>
+    </svg>
+    <div class="chart-source">資料來源：綜合統計處及差餉物業估價署數據（模擬數據，僅供原型展示）</div>
+  </div>
+
+  <div class="narrow">
+    <p class="prose reveal">
+      兩組數據的走勢在2023年後開始顯著分化。銷售額持續復甦並創新高的同時，空置率不降反升。這一背離揭示了一個被數字掩蓋的真相：<strong>總量增長並不等同於個體繁榮</strong>。市場的蛋糕確實在變大，但能分到蛋糕的商戶卻在減少。
+    </p>
+  </div>
+</section>
+
+<!-- ==================== CONCLUSION ==================== -->
+<section class="conclusion">
+  <div class="container">
+    <div class="narrow" style="padding:0">
+      <div class="section-header reveal">
+        <div class="section-label">結論</div>
+        <h2 class="section-title">銷售額 ≠ 商戶盈利</h2>
+        <p class="section-desc">三個關鍵啟示，重新理解零售市場的「繁榮」</p>
+      </div>
+    </div>
+
+    <div class="conclusion-grid reveal">
+      <div class="conclusion-card card-red reveal reveal-delay-1">
+        <div class="conclusion-card-num">01</div>
+        <div class="conclusion-card-title">總量指標的盲點</div>
+        <div class="conclusion-card-desc">銷售總額是市場總量指標，反映的是消費規模而非商戶的利潤水平。銷售額創新高，可能只是少數大型連鎖及奢侈品牌帶動，並不代表普通商戶受惠。</div>
+      </div>
+      <div class="conclusion-card card-warn reveal reveal-delay-2">
+        <div class="conclusion-card-num">02</div>
+        <div class="conclusion-card-title">成本結構性轉變</div>
+        <div class="conclusion-card-desc">租金、人工、物料三大成本的增速已系統性地超過收入增速。商戶的利潤率被壓縮至歷史低位（3.2%），經營容錯空間幾乎為零。</div>
+      </div>
+      <div class="conclusion-card card-blue reveal reveal-delay-3">
+        <div class="conclusion-card-num">03</div>
+        <div class="conclusion-card-title">市場集中化加劇</div>
+        <div class="conclusion-card-desc">中小商戶加速退場，大型品牌趁低租金擴張，市場呈現「贏者通吃」格局。空置率上升正是中小商戶被淘汰的直接體現。</div>
+      </div>
+    </div>
+
+    <!-- Methodology -->
+    <div class="methodology reveal">
+      <div class="methodology-title">研究方法說明</div>
+      <div class="methodology-text">
+        本報導數據來源包括香港特區政府統計處、差餉物業估價署公開數據，以及對12位零售業界人士的深度訪談。利潤結構分析基於中型零售商戶（200-500平方呎）的典型經營模型估算。所有圖表中的具體數值為原型展示用途的模擬數據，最終版本將替換為經核實的真實數據。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-team">
+    數據新聞團隊 — 視覺原型 v1.0
+  </div>
+  <div>
+    設計·數據可視化·互動開發<br>
+    2026年4月 · 此為視覺原型，所有數據為模擬數據
+  </div>
+</footer>
+
+<!-- ==================== JavaScript ==================== -->
+<script>
+// ===== Scroll Reveal =====
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// ===== Reading Progress =====
+const progressBar = document.getElementById('readingProgress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  progressBar.style.width = progress + '%';
+});
+
+// ===== Bar Chart Animation =====
+const barFills = document.querySelectorAll('.bar-fill[data-width]');
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bar = entry.target;
+      bar.style.width = bar.dataset.width;
+    }
+  });
+}, { threshold: 0.3 });
+
+barFills.forEach(bar => barObserver.observe(bar));
+
+// ===== Waterfall Animation =====
+const waterfallBars = document.querySelectorAll('.waterfall-bar[data-height]');
+const waterfallObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bars = entry.target.querySelectorAll('.waterfall-bar[data-height]');
+      bars.forEach((bar, i) => {
+        setTimeout(() => {
+          bar.style.height = bar.dataset.height;
+        }, i * 120);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+const waterfallContainer = document.getElementById('waterfallChart');
+if (waterfallContainer) waterfallObserver.observe(waterfallContainer);
+
+// ===== Topbar hide on scroll down =====
+let lastScroll = 0;
+const topbar = document.getElementById('topbar');
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
+  if (currentScroll > 200 && currentScroll > lastScroll) {
+    topbar.style.transform = 'translateY(-100%)';
+  } else {
+    topbar.style.transform = 'translateY(0)';
+  }
+  lastScroll = currentScroll;
+});
+
+// ===== Smooth fade for scroll hint =====
+const scrollHint = document.querySelector('.scroll-hint');
+if (scrollHint) {
+  window.addEventListener('scroll', () => {
+    const opacity = Math.max(0, 1 - window.scrollY / 400);
+    scrollHint.style.opacity = opacity;
+  });
+}
+</script>
+</body>
+</html>

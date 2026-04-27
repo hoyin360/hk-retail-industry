@@ -1,0 +1,21 @@
+{
+  "unit": "\u5bb6\u5e97\u92ea",
+  "series": [
+    { "period": "2025\u5e74 Q3", "value": 6.3 },
+    { "period": "2026\u5e74 Q1", "value": 9.75 }
+  ],
+  "sources": [
+    {
+      "label": "\u7f8e\u806f\u5de5\u5546\u8216\u8cc7\u6599\u7814\u7a76\u90e8",
+      "url": "https://www.midlandici.com.hk/ics/property/research/vacant_shop_report_2025q3_ebook"
+    },
+    {
+      "label": "HK01",
+      "url": "https://www.hk01.com/%E7%A4%BE%E6%9C%83%E6%96%B0%E8%81%9E/60330654/%E7%B5%90%E6%A5%AD%E6%BD%AE-%E9%A6%96%E5%AD%A3%E8%87%B3%E5%B0%9130%E5%BA%97%E5%91%8A%E5%88%A5-%E5%85%83%E6%97%A6-%E9%9F%BF%E9%A0%AD%E7%82%AE-fortnum-mason%E5%A2%9F%E5%86%9A"
+    },
+    {
+      "label": "Facebook\u7fa4\u7d44\u300c\u5168\u6e2f\u5e97\u8216\u57f7\u7b20\u7d50\u696d\u6d88\u606f\u95dc\u6ce8\u7d44\u300d",
+      "url": "https://www.facebook.com/share/g/1RckEDCmxD/"
+    }
+  ]
+}
