@@ -1,0 +1,14 @@
+{
+  "unit": "%",
+  "series": [
+    { "district": "尖沙咀", "value_2024": 13.9, "value_2025": 13.2 },
+    { "district": "旺角", "value_2024": 7.85, "value_2025": 9.8 },
+    { "district": "銅鑼灣", "value_2024": 12.0, "value_2025": 13.55 },
+    { "district": "中環", "value_2024": 13.3, "value_2025": 15.0 },
+    { "district": "四核心區", "value_2024": 10.65, "value_2025": 12.0 }
+  ],
+  "source": {
+    "label": "美聯工商鋪資料研究部",
+    "url": "https://www.midlandici.com.hk/ics/property/research/vacant_shop_report_2025q3_ebook"
+  }
+}

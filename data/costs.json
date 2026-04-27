@@ -1,0 +1,17 @@
+{
+  "revenue_growth": 16.2,
+  "costs": [
+    { "category": "租金", "growth": 23.5, "icon": "🏢" },
+    { "category": "人工", "growth": 12.8, "icon": "👥" },
+    { "category": "物料及物流", "growth": 9.4, "icon": "📦" }
+  ],
+  "waterfall": [
+    { "label": "銷售額", "value": 100, "type": "income" },
+    { "label": "貨品成本", "value": -42, "type": "cost" },
+    { "label": "租金", "value": -28, "type": "cost" },
+    { "label": "人工", "value": -18, "type": "cost" },
+    { "label": "水電雜費", "value": -8.8, "type": "cost" },
+    { "label": "淨利潤", "value": 3.2, "type": "profit" }
+  ]
+}
+

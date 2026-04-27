@@ -1,0 +1,32 @@
+{
+  "rent": {
+    "title": "2025年香港四大核心區一線街舖租金",
+    "unit": "%",
+    "source": {
+      "label": "高力",
+      "url": "https://www.colliers.com/download-article?itemId=01e0faf2-b695-4f5c-bb4e-670fb818b756"
+    },
+    "series": [
+      { "district": "總體", "value": 2.9, "highlight": true },
+      { "district": "銅鑼灣", "value": 2.0 },
+      { "district": "中環", "value": 3.2 },
+      { "district": "尖沙咀", "value": 4.2 },
+      { "district": "旺角", "value": 1.6 }
+    ]
+  },
+  "wage": {
+    "title": "香港零售行業每月平均工資水平（港元）",
+    "note": "所有僱員（包括全職僱員及兼職僱員）",
+    "unit": "HKD",
+    "source": {
+      "label": "香港特別行政區政府統計處",
+      "url": "https://www.censtatd.gov.hk/tc/web_table.html?id=220-23015#"
+    },
+    "series": [
+      { "year": "2022", "value": 13800 },
+      { "year": "2023", "value": 14100 },
+      { "year": "2024", "value": 14500 },
+      { "year": "2025", "value": 15000 }
+    ]
+  }
+}
