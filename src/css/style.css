@@ -319,6 +319,17 @@ body {
   color: var(--c-text-light);
 }
 
+.ds-intro-text {
+  padding: var(--s-80) 0;
+}
+.ds-intro-text__content {
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.9;
+  color: var(--c-text-light);
+  margin: 0 0 var(--s-32);
+}
+
 .ds-chart-card {
   max-width: var(--w-chart);
   margin: 0 auto var(--s-48);
@@ -353,6 +364,36 @@ body {
 .ds-chart-card__foot--hidden {
   display: none;
 }
+
+.ds-street-photo {
+  max-width: 600px;
+  margin: 0 auto var(--s-48);
+  background: #fff;
+  border: 1px solid var(--c-border-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ds-street-photo__container {
+  position: relative;
+  overflow: hidden;
+}
+.ds-street-photo__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ds-street-photo__caption {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 13px;
+  color: var(--c-text-light);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 0;
+}
+
 .ds-source--split {
   display: grid;
   grid-template-columns: 1fr 1fr;

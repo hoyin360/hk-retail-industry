@@ -160,7 +160,7 @@ export function init(container, data) {
       .attr('stroke-dasharray', '3 4');
   }
 
-  const legend = svg.append('g').attr('transform', `translate(${plotLeft + 28},${plotTop - 2})`);
+  const legend = svg.append('g').attr('transform', `translate(${plotLeft + 28},${margin.top - 58})`);
   const legendItems = [
     { label: '2024年', kind: 'old' },
     { label: '2025年', kind: 'new' }
